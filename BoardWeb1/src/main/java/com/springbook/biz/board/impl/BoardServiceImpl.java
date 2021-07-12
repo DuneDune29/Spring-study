@@ -7,38 +7,59 @@ import org.springframework.stereotype.Service;
 
 import com.springbook.biz.board.BoardService;
 import com.springbook.biz.board.BoardVO;
-import com.springbook.biz.common.BeforeAdvice;
+
+
+
+
 
 @Service("boardService")
-public class BoardServiceImpl implements BoardService {
+public class BoardServiceImpl implements BoardService{
+
 	@Autowired
-	private BoardDAO boardDAO;
+	private BoardDAOSpring boardDAO;
 	
+	
+	
+	@Override
 	public void insertBoard(BoardVO vo) {
-//		if(vo.getSeq()==0) {
-//			throw new IllegalArgumentException("0번 글은 등록할 수 없습니다.");
-//		}
-		//log.printLogging();
+		// TODO Auto-generated method stub
+		//if(vo.getSeq()==0) {
+		//	throw new IllegalArgumentException("0번 글은 등록할 수 없습니다.");
+		//}
+		boardDAO.insertBoard(vo);
 		boardDAO.insertBoard(vo);
 	}
 
+	@Override
 	public void updateBoard(BoardVO vo) {
-		//log.printLogging();
+		// TODO Auto-generated method stub
+		
 		boardDAO.updateBoard(vo);
 	}
 
+	@Override
 	public void deleteBoard(BoardVO vo) {
-		//log.printLogging();
-		boardDAO.deleteBoard( vo);
+		// TODO Auto-generated method stub
+		
+		boardDAO.deleteBoard(vo);
 	}
 
+	@Override
 	public BoardVO getBoard(BoardVO vo) {
-		//log.printLogging();
+		// TODO Auto-generated method stub
+		
 		return boardDAO.getBoard(vo);
 	}
 
+	@Override
 	public List<BoardVO> getBoardList(BoardVO vo) {
-		//log.printLogging();
+		// TODO Auto-generated method stub
+	
 		return boardDAO.getBoardList(vo);
 	}
+	
+	
+	
+	
+	
 }
