@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+						"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+  
+  <mapper namespace="org.sp.mybatis.EmpDAO">
+   <select id ="list" resultType="org.sp.mybatis.Emp">
+    <![CDATA[
+    SELECT * FROM EMP2
+   ]]>
+  </select>
+  
+  <insert id ="insert" parameterType="org.sp.mybatis.Emp">
+  <![CDATA[
+  INSERT INTO EMP2(empno, ename, deptno, job, sal)
+  VALUES (#{empno},#{ename},#{deptno},#{job},#{sal}) 
+  ]]>
+  </insert>
+  
+    <select id ="info" resultType="org.sp.mybatis.Emp">
+    <![CDATA[
+    SELECT * FROM EMP2 WHERE empno=#{empno}
+   ]]>
+  </select>
+  
+   <update id ="update" parameterType="org.sp.mybatis.Emp">
+     <![CDATA[
+     UPDATE EMP2 SET deptno=#{deptno}, sal=#{sal} WHERE empno=#{empno}
+   ]]>
+  </update>
+  
+  
+  <delete id ="delete">
+     <![CDATA[
+     DELETE FROM EMP2 WHERE empno=#{empno}
+    ]]>
+  </delete>
+  
+  
+  </mapper>
