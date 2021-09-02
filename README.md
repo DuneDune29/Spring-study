@@ -2,7 +2,7 @@
 
 KOSMO 84기 웹어플리케이션 개발 과정
 
-Spring Framework를 예제를 통해 실습하면서 이해하기
+전자정부 프레임워크인 Spring Framework를 예제를 통해 실습하면서 이해하기
 
 개발언어 : Java jdk1.8
 
